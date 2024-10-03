@@ -152,7 +152,7 @@ const TopicPreferencesSchema = z.object({
       z.object({
         topicName: z.string().nullish(),
         subscriptionStatus: z.string().nullish(),
-      })
+      }),
     )
     .nullish(),
   topicDefaultSubscriptionStatus: z
@@ -160,7 +160,7 @@ const TopicPreferencesSchema = z.object({
       z.object({
         topicName: z.string().nullish(),
         subscriptionStatus: z.string().nullish(),
-      })
+      }),
     )
     .nullish(),
 })
@@ -192,9 +192,11 @@ export const SESEventSchema = z
       SESRenderingFailureSchema,
       SESDeliveryDelaySchema,
       SESSubscriptionSchema,
-    ])
+    ]),
   )
 
-export function isSESEvent(data: unknown): data is z.infer<typeof SESEventSchema> {
+export function isSESEvent(
+  data: unknown,
+): data is z.infer<typeof SESEventSchema> {
   return SESEventSchema.safeParse(data).success
 }

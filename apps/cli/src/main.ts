@@ -2,11 +2,11 @@
 
 /** dinwwwh */
 
+import process from 'node:process'
 import { serve } from '@hono/node-server'
 import { generateOpenAPI } from '@orpc/openapi'
 import { contractAppRouter } from '@ownmailer/email-contract'
 import { Hono } from 'hono'
-import process from 'node:process'
 
 const app = new Hono()
 
@@ -45,7 +45,7 @@ app
             url: new URL('/api', c.req.url).toString(),
           },
         ],
-      })
+      }),
     )
   })
   .get('/api/*', (c) => {
@@ -56,6 +56,9 @@ app
 const PORT = process.env.PORT ? Number.parseInt(process.env.PORT) : 2206
 const HOST = process.env.HOST || '127.0.0.1'
 
-serve({ fetch: app.fetch, hostname: HOST, port: PORT }).addListener('listening', () => {
-  console.log(`Listening on http://${HOST}:${PORT}`)
-})
+serve({ fetch: app.fetch, hostname: HOST, port: PORT }).addListener(
+  'listening',
+  () => {
+    console.log(`Listening on http://${HOST}:${PORT}`)
+  },
+)

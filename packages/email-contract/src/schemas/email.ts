@@ -27,7 +27,11 @@ export type Email = z.infer<typeof EmailSchema>
 export type EmailSendBodyInput = z.infer<typeof EmailSendInputSchema>
 export type EmailListQueryInput = z.infer<typeof EmailListInputSchema>
 
-const TimestampSchema = z.number().int().min(0).describe('unix timestamp in seconds')
+const TimestampSchema = z
+  .number()
+  .int()
+  .min(0)
+  .describe('unix timestamp in seconds')
 
 export const EmailScheduledLogSchema = z.object({
   type: z.literal('scheduled'),
@@ -187,7 +191,7 @@ export const EmailSendInputSchema = z.object({
         contentType: z.string().optional(),
         headers: z.record(z.string()).default(() => ({})),
         cid: z.string().optional(),
-      })
+      }),
     )
     .default(() => []),
 

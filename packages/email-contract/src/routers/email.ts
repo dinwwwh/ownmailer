@@ -1,6 +1,10 @@
 import { z } from 'zod'
 import { orpc } from '../orpc'
-import { EmailListInputSchema, EmailSchema, EmailSendInputSchema } from '../schemas/email'
+import {
+  EmailListInputSchema,
+  EmailSchema,
+  EmailSendInputSchema,
+} from '../schemas/email'
 
 export const contractEmailSend = orpc
   .route({

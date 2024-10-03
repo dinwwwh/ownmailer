@@ -14,10 +14,7 @@
     "url": "https://github.com/dinwwwh/ownmailer.git",
     "directory": "ownmailer/email-contract"
   },
-  "keywords": [
-    "dinwwwh",
-    "ownmailer"
-  ],
+  "keywords": ["dinwwwh", "ownmailer"],
   "publishConfig": {
     "access": "public",
     "exports": {
@@ -37,22 +34,13 @@
       "types": "./src/*.ts"
     }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "scripts": {
-    "build": "vite build && tsc -b --noCheck",
+    "build": "UNPLUGIN_ON_SUCCESS='tsc -b --noCheck' vite build",
     "type:check": "tsc -b"
   },
   "dependencies": {
     "@orpc/contract": "workspace:*",
     "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "@dinwwwh/tsconfig": "latest",
-    "@types/node": "latest",
-    "typescript": "latest",
-    "vite": "latest"
   }
 }

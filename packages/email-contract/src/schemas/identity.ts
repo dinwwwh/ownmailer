@@ -1,6 +1,8 @@
 import { z } from 'zod'
 
-export type IdentityVerificationStatus = z.infer<typeof IdentityVerificationStatusSchema>
+export type IdentityVerificationStatus = z.infer<
+  typeof IdentityVerificationStatusSchema
+>
 export type Identity = z.infer<typeof IdentitySchema>
 
 export const IdentityVerificationStatusSchema = z.enum([
