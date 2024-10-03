@@ -111,6 +111,8 @@ importers:
         specifier: ^3.23.8
         version: 3.23.8
 
+  packages/email-service: {}
+
 packages:
 
   '@ampproject/remapping@2.3.0':
