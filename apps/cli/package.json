@@ -1,0 +1,41 @@
+{
+  "name": "@ownmailer/cli",
+  "type": "module",
+  "version": "0.0.0",
+  "author": {
+    "name": "dinwwwh",
+    "email": "dinwwwh@gmail.com",
+    "url": "https://dinwwwh.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dinwwwh/dinwwwh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinwwwh/dinwwwh.git",
+    "directory": "examples/typescript-vite-app"
+  },
+  "keywords": [
+    "dinwwwh"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "bin": "./dist/main.js",
+  "scripts": {
+    "dev": "pnpm run build --watch --onSuccess='node ./dist/main.js'",
+    "build": "tsup --entry.main=src/main.ts --clean --sourcemap --splitting --minify --format=esm",
+    "preview": "node ./dist/main.js",
+    "type:check": "tsc -b"
+  },
+  "devDependencies": {
+    "@orpc/openapi": "workspace:*",
+    "@ownmailer/email-contract": "workspace:*",
+    "@hono/node-server": "^1.13.1",
+    "@types/node": "latest",
+    "hono": "^4.6.3"
+  }
+}

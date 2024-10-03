@@ -19,5 +19,9 @@
     "knip:check": "pnpm dlx knip",
     "knip:fix": "pnpm run knip:check --fix --allow-remove-files"
   },
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.10.0",
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2"
+  }
 }

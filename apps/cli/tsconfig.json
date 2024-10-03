@@ -1,9 +1,9 @@
 {
-  "extends": "@dinwwwh/tsconfig/base-lib.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["vite/client"]
+    "types": ["@types/node"]
   },
-  "references": [{ "path": "../../../orpc/packages/contract" }],
+  "references": [],
   "include": ["src"],
   "exclude": [
     "**/*.test.*",
