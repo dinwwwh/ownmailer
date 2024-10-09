@@ -3,7 +3,10 @@
   "compilerOptions": {
     "types": ["@types/node"]
   },
-  "references": [],
+  "references": [
+    { "path": "../../packages/email-contract" },
+    { "path": "../../packages/email-service" }
+  ],
   "include": ["src"],
   "exclude": [
     "**/*.test.*",

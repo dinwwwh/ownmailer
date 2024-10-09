@@ -14,23 +14,33 @@
     "url": "https://github.com/dinwwwh/dinwwwh.git",
     "directory": "examples/typescript-vite-app"
   },
-  "keywords": ["dinwwwh"],
+  "keywords": [
+    "dinwwwh"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "bin": "./dist/main.js",
   "scripts": {
-    "dev": "UNPLUGIN_ON_SUCCESS='node ./dist/main.js' vite build --watch",
+    "dev": "UNPLUGIN_ON_SUCCESS='node --env-file=.env.dev ./dist/main.js' vite build --watch",
     "build": "vite build",
     "preview": "node ./dist/main.js",
     "type:check": "tsc -b"
   },
   "devDependencies": {
-    "@orpc/openapi": "workspace:*",
-    "@ownmailer/email-contract": "workspace:*",
+    "@commander-js/extra-typings": "^12.1.0",
     "@hono/node-server": "^1.13.1",
+    "@orpc/openapi": "workspace:*",
+    "@orpc/server": "workspace:*",
+    "@ownmailer/email-contract": "workspace:*",
+    "@ownmailer/email-service": "workspace:*",
     "@types/node": "latest",
+    "commander": "^12.1.0",
+    "consola": "^3.2.3",
     "hono": "^4.6.3"
   }
 }

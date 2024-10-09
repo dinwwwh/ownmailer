@@ -3,6 +3,6 @@ import { contractEmailRouter } from './email'
 import { contractIdentityRouter } from './identity'
 
 export const contractAppRouter = orpc.router({
-  identity: contractIdentityRouter.prefix('/identities'),
-  email: contractEmailRouter.prefix('/emails'),
+  identity: orpc.prefix('/identities').router(contractIdentityRouter),
+  email: orpc.prefix('/emails').router(contractEmailRouter),
 })
